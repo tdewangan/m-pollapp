@@ -1,0 +1,9 @@
+body {
+    font-family: Montserrat;
+}
+
+.panel-center {
+  min-width: 250px;
+  max-width: 320px;
+  margin: 0 auto;
+}

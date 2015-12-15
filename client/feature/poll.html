@@ -1,0 +1,44 @@
+<Template name="poll">
+  <div data-pollid={{ _id }} class="question">
+    <h3>{{ question }}</h3>
+    <div class="list-group">
+    {{ #each indexedArray choices}}
+        <a href="#" class="list-group-item" data-choice-id="{{_index}}">
+          <div class="choice">
+            {{choice}}
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-inverse" style="width: {{getPercentage ../total}}">
+              <span class="sr-only">{{getPercentage ../total}}</span>
+            </div>
+          </div>
+        </a>
+    {{ /each }}
+  </div>
+  {{#if currentUser}}
+    <div class="">
+      <button class="btn btn-primary btn-raised btn-sm vote disabled">Vote</button>
+    </div>
+  {{/if}}
+  </div>
+</Template>
+<!-- <div data-pollid={{ _id }} class="question">
+  <h3>{{ question }}</h3>
+  {{ #each indexedArray choices}}
+    <div>
+      <div class="col-md-11 col-xs-10 col-sm-10">
+        <div>
+          <span>{{choice}}</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" style="width: {{getPercentage ../total}}">
+            <span class="sr-only">{{getPercentage ../total}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1 col-xs-2 col-sm-2">
+        <button class="btn btn-inverse btn-raised btn-sm vote" data-id={{ _index }}>Vote</button>
+      </div>
+    </div>
+  {{ /each }}
+</div> -->

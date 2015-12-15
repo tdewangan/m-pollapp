@@ -1,0 +1,12 @@
+<Template name="navigation">
+  <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+    <li><a href="{{pathFor route='list'}}">PollApp</a></li>
+    <li><a href="/new">New Poll</a></li>
+    {{#if currentUser}}
+      <li><a href="#" class="logout">Logout</a></li>
+    {{else}}
+      <li><a href="{{pathFor route='register'}}">Register</a></li>
+      <li><a href="{{pathFor route='login'}}">Login</a></li>
+    {{/if}}
+  </ul>
+</Template>

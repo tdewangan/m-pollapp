@@ -1,0 +1,11 @@
+<Template name="list">
+  {{#if Template.subscriptionsReady}}
+    <div class="polls">
+    {{ #each indexedArray polls }}
+      {{ >poll }}
+    {{ /each}}
+    </div>
+  {{else}}
+      <div>Loading...</div>
+  {{/if}}
+</Template>

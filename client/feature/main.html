@@ -1,0 +1,31 @@
+<template name="main">
+    <header>{{> navigation}}</header>
+    <div id="main-container" class="container">
+    {{> yield}}
+    </div>
+</template>
+<head>
+  <title>PollApp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1" />
+  <script type="text/javascript">
+  $.fn.serializeObject = function()
+  {
+     var o = {choices:[]};
+     var a = this.serializeArray();
+     $.each(a, function(index) {
+       if(this.name==='question'){
+         o[this.name] = this.value || '';
+       }
+       if(this.name==='choice'){
+         var choice={};
+         choice['key']=index-1;
+         choice['choice']=this.value||'';
+         choice['vote']=0;
+        o['choices'].push(choice);
+       }
+     });
+     return o;
+  };
+  </script>
+</head>
