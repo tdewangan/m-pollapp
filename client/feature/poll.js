@@ -2,6 +2,12 @@ Meteor.subscribe('updatepoll');
 Template.poll.helpers({
   getPercentage: function(total){
     return (this.vote * 100 )/total + '%';
+  },
+  displayIfNotVoted: function(){
+    return this.users.indexOf(Meteor.userId())>-1 ? 'hide':'';
+  },
+  displayIfVoted: function(){
+    return this.users.indexOf(Meteor.userId())>-1 ? '':'hide';
   }
 });
 Template.list.events({
