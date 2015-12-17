@@ -5,7 +5,7 @@ Template.login.events({
         var password = $('[name=password]').val();
         Meteor.loginWithPassword(email, password, function(error){
           if(error){
-              console.log(error.reason);
+              Toast.error(error.reason);
           } else {
               Router.go("home");
           }

@@ -21,9 +21,10 @@ Template.register.events({
             }
         }, function(error){
             if(error){
-                console.log(error.reason); // Output error if registration fails
+                Toast.error(error.reason); // Output error if registration fails
             } else {
                 Router.go("home"); // Redirect user if registration succeeds
+                Toast.success('Registration is success. Welcome!');
             }
         });
         Router.go('/');
